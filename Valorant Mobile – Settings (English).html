@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Valorant Mobile – Settings (English)</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#120a22;--panel:#241a3d;--panel2:#2f2350;--line:#43366b;--tx:#f1ecfb;--dim:#a99fc4;--acc:#ff4655;--teal:#4fd1c5;--btn:#efe9de;--btnt:#111}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#efe9f9;--panel:#fff;--panel2:#e6def5;--line:#c9bde6;--tx:#1d1433;--dim:#6a5f87;--btn:#2a1d4d;--btnt:#fff}}
+:root[data-theme="light"]{--bg:#efe9f9;--panel:#fff;--panel2:#e6def5;--line:#c9bde6;--tx:#1d1433;--dim:#6a5f87;--btn:#2a1d4d;--btnt:#fff}
+:root[data-theme="dark"]{color-scheme:dark}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;height:100%;background:var(--bg);color:var(--tx);font:14px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+#app{display:flex;flex-direction:column;height:100%;max-width:1100px;margin:auto}
+header{display:flex;align-items:center;gap:8px;padding:8px 12px}
+header h1{font-size:18px;margin:0;font-weight:600;flex:1;color:var(--dim)}
+button{font:inherit;color:var(--tx);background:var(--panel);border:1px solid var(--line);padding:6px 12px;cursor:pointer}
+button.p{background:var(--btn);color:var(--btnt);border-color:var(--btn)}
+#body{flex:1;display:flex;min-height:0}
+nav{width:120px;flex:none;border-right:1px solid var(--line);overflow:auto}
+nav div{padding:14px 8px;text-align:center;cursor:pointer;color:var(--dim)}
+nav div.on{background:linear-gradient(90deg,var(--acc),#7a1d3a);color:#fff;font-weight:600}
+main{flex:1;display:flex;flex-direction:column;min-width:0}
+#tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);padding:0 8px;overflow:auto;align-items:center}
+#tabs div{padding:9px 14px;cursor:pointer;color:var(--dim);white-space:nowrap}
+#tabs div.on{background:var(--panel2);color:var(--tx);border-bottom:2px solid var(--tx)}
+#tabs span{margin-left:auto;color:var(--dim);font-size:12px;white-space:nowrap}
+#panel{flex:1;overflow:auto;padding:8px 12px;display:flex;gap:12px;align-items:flex-start}
+#pv{flex:none;width:150px;height:150px;border:2px solid var(--line);position:relative;background:#8a7a62;display:none}
+#pv.map{background:#5b79a6}
+#rows{flex:1;min-width:0}
+.h{border-left:3px solid var(--acc);padding-left:8px;margin:12px 0 6px;font-weight:600}
+.r{display:flex;align-items:center;gap:8px;background:var(--panel);margin-bottom:2px;padding:11px 12px;min-height:42px}
+.r>.l{flex:1;min-width:0}
+.r.ch{padding-left:28px;background:var(--panel2)}
+.r.g{cursor:pointer;background:var(--panel2)}
+.gr{display:grid;grid-template-columns:1fr 1fr;gap:0 4px}
+.o{display:inline-flex;align-items:center;gap:6px;margin-left:14px;cursor:pointer;white-space:nowrap}
+.dm{width:14px;height:14px;border:1.5px solid var(--dim);transform:rotate(45deg) scale(.85);display:inline-block}
+.o.on .dm{background:var(--teal);border-color:var(--teal)}
+.sl{display:inline-flex;align-items:center;gap:6px}
+.sl input{width:130px;accent-color:var(--tx)}
+.sl b{min-width:34px;text-align:right;font-weight:500}
+.sl i{font-style:normal;width:24px;height:24px;line-height:22px;text-align:center;background:var(--btn);color:var(--btnt);cursor:pointer}
+.sw{display:inline-flex;gap:8px}
+.sw u{width:22px;height:22px;border:2px solid transparent;cursor:pointer;display:inline-block;text-decoration:none}
+.sw u.on{outline:2px solid var(--tx);outline-offset:1px}
+.n{color:var(--dim);padding:8px 12px;text-align:right}
+.q{display:inline-block;width:14px;height:14px;line-height:14px;border-radius:50%;background:var(--dim);color:var(--bg);font-size:10px;text-align:center;margin-left:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.card{background:var(--panel);border:2px solid var(--line);padding:10px}
+.card.on{border-color:var(--tx)}.card small{color:var(--dim)}
+.ab{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.ab div{background:var(--panel);padding:10px;font-size:13px}.ab b{display:block;font-size:15px}.ab em{display:inline-block;border:1px solid var(--dim);padding:0 5px;margin:4px 0;font-size:11px;font-style:normal}
+.wl{display:flex;gap:12px;flex-wrap:wrap}.wl>div{flex:1;min-width:220px}
+.bar{display:flex;gap:8px;padding:8px 12px;border-top:1px solid var(--line)}.bar .p{margin-left:auto}
+.lk{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.lk button{font-size:12px}
+@media (max-width:640px){#body{flex-direction:column}nav{width:auto;display:flex;border-right:0;border-bottom:1px solid var(--line)}nav div{padding:10px 12px;white-space:nowrap}
+#panel{flex-direction:column}.gr{grid-template-columns:1fr}.r{flex-wrap:wrap}.o{margin-left:8px}}
+</style>
+</head>
+<body>
+<div id="app">
+<header><span>‹</span><h1>Settings</h1><button>Network Diagnostics</button><button id="rst">Restore Defaults</button></header>
+<div id="body"><nav id="nav"></nav><main><div id="tabs"></div><div id="panel"><div id="pv"></div><div id="rows"></div></div><div class="bar" id="bar"><button>Customer Service</button><button>Feedback</button><button class="p">Log Out</button></div></main></div>
+</div>
+<script>
+const P9=['#fff','#0f0','#8f0','#df0','#ff0','#0ff','#f0f','#f00','#888'],P4=['#ffa500','#ff0','#f00','#f0f'];
+const ON=(l,v)=>['t',l,v],QF=['Off','ADS Fire','Crouch, Then Fire','Crouch + ADS Fire'];
+const wg=(l,o,ns)=>['g',l,ns.map(n=>['s',n,o,0]),{s:o,i:0}];
+const SW=['Button Walk','Joystick Inner-Ring Walk','Independent Joystick Walk'],M3=['Tap','Hold','Hybrid'],FB=['Separate Button','Merge into Left Fire','Merge into Right Fire'],AU=['Everyone','Friends Only','Only Me'];
+const hit=(l,n)=>ON(l,n);
+const priv=['Show My Personal Space','Show Personal Info on Leaderboards','Allow Friend Requests','Allow Achievement Display','Show My Space Visit History','Allow Team Recommendations','Allow Me to Be Recommended to Others','Allow Post-Match Team Recommendations','Allow Friends to Spectate & View Scores','Show My Space Updates','Show My Visitor Views','Show My Combat Stats',['Show My Valorant Moments',AU],'Allow Discovery on Add-Friend Screen','Allow Collection Score Display','Allow Collected Skins Display','Show My Gender','Show Large Personal Space Avatar',['Allow Likes on Valorant Moments Videos',AU],'Allow Crew Invites to Me','Show My Crew Info','Allow Others to See Popularity Details','Allow Others to See My Gift Info','Allow Others to See Gifter Info'];
+const priv2=['Show Personal Info While Spectating Pro Players',['Pro Player: Enable In-Match Spectator Chat',0],'Show Message Animations in General/Nearby Channels',['Poke (Pat)',AU],'Show Agent Power Icon in Matches',['Show My Valorant Space',AU],'Show My Season Hall of Fame','Show Frequently Played Agents on Agent Select','Allow Personalized Friend Recommendations','Allow Elite Privilege Level Display','Prioritize Valorant Valley Showcase Board','Allow Visitors to See Friend Updates',['Hide Others’ Personalized Pre-Match Declarations',0]];
+const pr=a=>a.map(x=>typeof x=='string'?ON(x,1):Array.isArray(x)&&Array.isArray(x[1])?['s',x[0],x[1],0]:ON(x[0],x[1]));
+const DATA=[
+{n:'Basic',tabs:[
+ {n:'Operation',bar:1,rows:[['h','Control Mode'],['s','Silent-Walk Operation Mode',SW,1],['s','Scope (ADS) Mode',M3,1],['s','Crouch Mode',M3,1],['h','Advanced Settings'],
+  ['gr',[['Aim Assist',1],['Auto-Walk While Firing',1],['Auto-Scope Sniper Rifles',0],['Left-Handed Weapon Hold',0],['Quick Rope Climb',1],['Auto-Switch to Sidearm',0],['Show Colored Muzzle Flash',0],['Separate Inspect Button',0]]],
+  ['s','Auto-Equip Priority',['Previous Weapon','Strongest Weapon','Avoid Melee Weapons'],1],['h','Button Camera Rotation'],
+  ['gr',[['Right Fire Button Rotates View',0],['ADS Button Rotates View',0],['Crouch Button Rotates View',0],['Jump Button Rotates View',0],['Reload Button Rotates View',0],['Smart Fire Button Rotates View',0],['Walk Button Rotates View',0],['Inspect Button Rotates View',0]]]]},
+ {n:'Smart Fire',rows:[['h','Smart Fire'],
+  ['g','Sidearm Fire',[...['Classic','Frenzy','Ghost','Pursuit*','Sheriff','Golden Gun*'].map(n=>['s',n,['Off','Crouch, Then Fire'],0]),['s','Gold Headhunter*',QF,0]],{s:['Off','Crouch, Then Fire'],i:0}],
+  wg('SMG Fire',QF,['Stinger','Spectre']),wg('Rifle Fire',QF,['Bulldog','Guardian','Phantom','Vandal']),wg('Machine Gun Fire',QF,['Ares','Odin']),
+  wg('Sniper Fire',['Off','ADS, Release to Fire'],['Marshal','Operator','Lone Firepower*','Outlaw']),wg('Shotgun Fire',['Off','Release to Fire'],['Classic Alt-Fire','Shorty','Bucky']),
+  ['s','Smart Fire Button',FB,1],['n','* Weapon name translated literally – unconfirmed']]},
+ {n:'Map',pv:'map',rows:[['h','Map'],['s','Radar Mode',['Local','Global'],1,{i:0,r:['r','Zoom',100,50,150,'']}],['s','View Mode',['Follow','Fixed','Faction'],0],ON('Cone of Vision',1),['s','Map Expand Method',['Separate Button','Map Itself'],1],ON('Show Current Location Name',1),
+  ['h','Large Map'],['s','Show Location Names',['Hidden','Buy Phase Only','Shown'],2],['s','Location Name Type',['Official Name','Nickname'],0]]},
+ {n:'Combat Info',rows:[['h','General Settings'],['gr',[['Kill Feed Names',0],['Own Ability Announcements',1],['Ability Labels',1],['Ability Guide Lines',1]]],['c','Enemy Outline Color',0,P4],
+  ['h','Demolition Mode'],['gr',[['Round Economy Summary',0],['Teammate Overhead Info',1],['Zone Point Alerts',1],['Spike Alerts',1]]],
+  ['g','Sound Indicator Rings',['Footstep Ring','Gunshot Ring','Spike Sound Ring','Ability Sound Ring','Door Sound Ring'].map(n=>ON(n,1)),{t:1}],ON('In-Match Buy Recommendations',0)]},
+ {n:'Other',rows:[['h','Other'],ON('Auto-Mark Enemies',1),ON('Double-Tap Screen to Mark',0),ON('Recommended Comms After Marking',1),['b','Console','Open Panel'],
+  ['h','In-Match Interaction'],['g','Friendly Interactions',['Tactical Comms','Apologize','Encourage','Hold Steady','Coordinate'].map(n=>ON(n,1)),{t:1}],['h','General Comms'],['x','wheel']]}]},
+{n:'Layout',tabs:[{n:'Layout',rows:[['h','Control Layout'],['x','cards'],['h','Related Settings'],['s','Joystick Scheme',['Fixed Joystick','Left-Half Move','Follow Finger'],0],['s','Left Fire Button',['Always Off','Always On','ADS On'],1],ON('Upper-Left Area Fire',0),['s','Right Fire Button',['Always Off','Always On','ADS On'],0],['s','Smart Fire Button',FB,1]]}]},
+{n:'Audio & Video',tabs:[
+ {n:'Graphics',note:'Device Load: High',rows:[['h','Combat Experience'],ON('Pure Focus Mode',1),['h','Graphics'],['n','To change graphics quality / frame rate, turn off Pure Focus Mode first'],['h','Other'],['r','Notch Adaptation',25,0,100,'',1],ON('Show Frame Rate',1),ON('Spectator Frame Limit',1),ON('Battery Saver Mode',1)]},
+ {n:'Sound',rows:[['h','Sound Settings'],['rt','Master Volume',100],['rt','Sound Effects Volume',100],['rt','Music Volume',30],['rt','Voice Announcement Volume',100],['h','Squad Voice Chat'],['rt','Voice Speaker Volume',70],['rt','Microphone Volume',70],['b','Microphone Loopback Test','Hold to Test'],ON('Directional Mic Noise Reduction',0),ON('Active Noise Reduction',0)]},
+ {n:'Vibration',rows:[['h','Vibration Feedback'],ON('Vibration Master Switch',1),ON('Auto-Run Vibration',0),ON('Vibrate While Holding Voice',1),ON('Quick Comms Vibration',1),ON('Hold-Ability Vibration',0),ON('Invite / Join Request Vibration',1),ON('Match Found Vibration',1),ON('Agent Select Reminder Vibration',1),ON('Allow In-Match Vibration Alerts',1)]}]},
+{n:'Agents',tabs:[{n:'Agent',rows:[['x','jett'],['h','Ability Control Settings'],['s','Ability Cast Method',['Quick Cast','Classic Cast'],0],ON('Cancel Walk After Casting Ability',0)]},{n:'Ability Control Assist',rows:[['x','skills']]}]},
+{n:'Sensitivity',tabs:[
+ {n:'Touch Screen',rows:[['h','General'],['s','Sensitivity Preset',['Low','Medium','High','Custom'],1],['s','Camera Turn Mode',['Fixed Speed','Acceleration'],1],['r','Acceleration',100,0,200,'%',1],ON('Turn Assist',1),['h','Touch Sensitivity'],
+  ['g','One-Tap Sensitivity Adjust',[['r','Turning Sensitivity',100,0,200,'',1],['r','SMG Scope',85,0,200,''],['r','Rifle Scope',80,0,200,''],['r','Machine Gun Scope',85,0,200,''],['r','Sniper Scope',44,0,200,''],['r','Operator 2nd-Stage Scope',22,0,200,''],['r','Gold Headhunter Scope*',68,0,200,'']],{t:1,r:100}],ON('Reuse Scope Sensitivity While Firing',1),['r','Vertical (Y-Axis) Sensitivity',90,0,200,'%']]},
+ {n:'Gyroscope',rows:[['h','Gyroscope Sensitivity'],['s','Gyroscope',['Off','On While Scoped','Always On'],2],ON('Gyro X-Axis Invert',0),ON('Gyro Y-Axis Invert',0),['g','One-Tap Sensitivity Adjust',[],{t:1,r:85}],ON('Reuse Gyro Sensitivity While Firing',1),['r','Vertical (Y-Axis) Sensitivity',75,0,200,'%']]}]},
+{n:'Crosshair',tabs:[
+ {n:'General',pv:'xh',rows:[['h','Crosshair Features'],ON('Hide Crosshair',0),ON('Fade Upper Crosshair Line',1),ON('Show Own Crosshair While Spectating',0),ON('Use Cross Crosshair for Shotguns',0),
+  ['g','Crosshair Hit Feedback',[['c','Hit Feedback Style',0,['✕','✖','⁙','⤧']],['c','Body-Hit Color',0,P9],['c','Headshot Color',7,P9],['r','Feedback Scale',65,0,100,''],['r','Feedback Position Offset',1,0,20,''],['s','Feedback Animation',['Converge Inward','Expand Outward'],1]],{t:1}]]},
+ {n:'Hip-Fire',pv:'xh',rows:[['h','Hip-Fire Crosshair'],['c','Color',5,P9],ON('Crosshair Outline',0),ON('Center Dot',0),
+  ['g','Inner Crosshair',[['r','Thickness',2,0,10,''],['r','Horizontal Length',3,0,20,''],ON('Vertical Length Matches Horizontal',1),['r','Opacity',100,0,100,''],['r','Separation',1,0,20,''],ON('Run Spread',0),ON('Fire Spread',1)],{t:1}],ON('Outer Crosshair',0)]},
+ {n:'Scope (ADS)',pv:'xh',rows:[['h','Scope Crosshair'],ON('Reuse Hip-Fire Crosshair',1)]},
+ {n:'Sniper',pv:'xh',rows:[['h','Sniper Crosshair'],['s','Move-Blur Style',['Crosshair Blur','Center Dot Show/Hide'],0],ON('Center Dot',1),['c','Color',5,P9],['r','Size',11,0,30,''],['r','Opacity',100,0,100,'']]}]},
+{n:'Other',tabs:[
+ {n:'Permissions',rows:[['h','Privacy & Permissions'],...pr(priv),...pr(priv2),['b','Microphone Permission','Go to Settings'],['b','Location Permission','Go to Settings'],['h','Account Security'],['x','links']]},
+ {n:'Blocklist',note:'0/100',rows:[['x','empty']]},
+ {n:'Resource Download',rows:[['x','res']]}]}
+];
+const INIT=JSON.stringify(DATA);let S=DATA,si=0,ti=0;
+const $=id=>document.getElementById(id),E=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const open={};
+function dm(on,txt,fn){const o=E('span','o'+(on?' on':''),'<span class="dm"></span>'+txt);o.onclick=fn;return o}
+function slider(v,min,max,u,set,rec){const w=E('span','sl'),b=E('b',0,v+u),i=E('input');i.type='range';i.min=min;i.max=max;i.value=v;
+ const up=x=>{x=Math.max(min,Math.min(max,+x));i.value=x;b.textContent=x+u;set(x);pvu()};i.oninput=()=>up(i.value);
+ const m=E('i',0,'−'),p=E('i',0,'+');m.onclick=()=>up(+i.value-1);p.onclick=()=>up(+i.value+1);w.append(b,m,i,p);return w}
+function row(r,par,ch,rr){const t=r[0];
+ if(t=='h'){par.append(E('div','h',r[1]));return}
+ if(t=='n'){par.append(E('div','n',r[1]));return}
+ if(t=='x'){special(r[1],par);return}
+ if(t=='gr'){const g=E('div','gr');r[1].forEach(a=>{const d=E('div','r');d.append(E('span','l',a[0]));d.append(dm(a[1],'On',()=>{a[1]=a[1]?0:1;rr()}));g.append(d)});par.append(g);return}
+ const d=E('div','r'+(ch?' ch':'')),l=E('span','l',r[1]);d.append(l);
+ if(t=='t')d.append(dm(r[2],'On',()=>{r[2]=r[2]?0:1;rr()}));
+ if(t=='s'){r[2].forEach((o,i)=>d.append(dm(r[3]==i,o,()=>{r[3]=i;rr()})));par.append(d);if(r[4]&&r[3]==r[4].i)row(r[4].r,par,1,rr);return}
+ if(t=='r')d.append(slider(r[2],r[3],r[4],r[5],v=>r[2]=v,r[6]));
+ if(t=='rt'){const o=r.o||(r.o=[1]);d.append(dm(o[0],'On',()=>{o[0]=o[0]?0:1;rr()}),slider(r[2],0,100,'',v=>r[2]=v))}
+ if(t=='c'){const w=E('span','sw'),col=r[3][0][0]=='#';r[3].forEach((c,i)=>{const u=E('u',i==r[2]?'on':'',col?'':c);if(col)u.style.background=c;else u.style.cssText='width:auto;padding:0 6px;font-size:18px';u.onclick=()=>{r[2]=i;rr()};w.append(u)});d.append(w)}
+ if(t=='b'){const b=E('button','p',r[2]);d.append(b)}
+ if(t=='g'){const k=r[1],h=r[3];d.classList.add('g');l.innerHTML=(open[k]?'⌃ ':'⌄ ')+r[1];
+  if(h.t!=null)d.append(dm(h.t,'On',e=>{h.t=h.t?0:1;rr()}));if(h.s)h.s.forEach((o,i)=>d.append(dm(h.i==i,o,()=>{h.i=i;rr()})));if(h.r!=null)d.append(slider(h.r,0,200,'%',v=>h.r=v));
+  l.onclick=()=>{open[k]=!open[k];rr()};par.append(d);if(open[k])r[2].forEach(c=>row(c,par,1,rr));return}
+ par.append(d)}
+function special(n,p){
+ if(n=='cards'){const g=E('div','cards');[['Two-Finger Layout','#Mobile #Two-finger layout – suits two-finger play'],['Multi-Finger Layout','#Mobile #Multi-finger layout – suits three-finger play'],['Compact Layout','#Mobile #Two-finger layout – suits small screens']].forEach((c,i)=>{const d=E('div','card'+(i==1?' on':''),'<b>'+c[0]+' ✎</b><br><small>'+c[1]+'</small>');if(i==1)d.append(E('div',0,'<br><button class="p">Custom Layout</button> <button>⇪</button>'));g.append(d)});p.append(g);return}
+ if(n=='jett'){p.append(E('div','r','<b style="flex:1">Jett</b><button>Apply to Other Agents</button>'));
+  p.append(E('div','ab','<div><b>Cloudburst</b><em>Smoke</em><br>Throw a projectile that expands into a short-lived smoke cloud on impact, blocking vision. Hold and drag the ability button to curve the smoke toward your crosshair.</div><div><b>Updraft</b><em>Mobility</em><br>Instantly propel yourself upward; you can glide and fall slowly in the air. Hold the ability button to start gliding automatically.<br><br>Hold to Glide ◆</div><div><b>Tailwind</b><em>Mobility</em><br>Activate to build a tailwind for a limited time. Press again to dash in your movement direction (or facing direction if standing still). Every two kills recharge Tailwind.</div><div><b>Blade Storm</b><em>Damage</em><br>Equip a set of knives. Press fire to throw one at a target; a kill refills them. Tap [Assist Fire Button] to throw all remaining knives, but you can’t refill by kills this way.</div>'));return}
+ if(n=='skills'){[['Sage','Healing Orb','Smart Switch'],['Phoenix','Curveball','Smart Switch'],['Brimstone','Sky Smoke','Spot Placement Assist',1],['Raze','Boom Bot','Smart Detonate'],['Skye','Guiding Light','Smart Detonate'],['Jett','Updraft','Hold to Glide'],['Astra','Cosmic Divide','Star Wheel Casting'],['Clove','Smoke (Ruse)*','Spot Placement Assist',1]].forEach(a=>{p.append(E('div','r','<b style="width:100px">'+a[0]+'</b><span style="width:170px">'+a[1]+'</span><span class="l">'+a[2]+'</span>'+(a[3]?'<button>Spot Settings</button> ':'')+'<span class="o on"><span class="dm"></span></span>'))});return}
+ if(n=='wheel'){const w=E('div','wl'),L=E('div'),R=E('div'),mode=S[si].tabs[ti].mode||0,it=S[si].tabs[ti].it||(S[si].tabs[ti].it=[[['Silent Walk',1],['Rotate',1],['Fall Back',1],['Rush',1],['Need Healing',0]],[['Silent Walk',1],['Rotate',1],['Fall Back',1],['Push Forward',1],['Need Healing',0]]]);
+  const bt=E('div','r');['Attack','Defense'].forEach((a,i)=>{const b=E('button',mode==i?'p':'',a);b.onclick=()=>{S[si].tabs[ti].mode=i;rr()};bt.append(b)});L.append(bt);
+  it[mode].forEach(a=>{const d=E('div','r','<span class="l">'+a[0]+'</span><span>'+(a[1]?'✓':'')+'</span>');d.style.cursor='pointer';d.onclick=()=>{a[1]=a[1]?0:1;rr()};L.append(d)});
+  R.append(E('div','h','Equipped Quick Messages'),E('div','card','Center: <b>Tactical</b><br>'+it[mode].filter(a=>a[1]).map(a=>a[0]).join(' · ')));w.append(L,R);p.append(w);return}
+ if(n=='links'){p.append(E('div','lk',['Game License & Service Agreement','Privacy Protection Guide','Children’s Privacy Protection Guide','Delete Game Account','Collected Personal Info List','Third-Party Info Sharing List','Guangdong B2-20090059-3216A (license no.)','Zhiji Privacy Assistant','Tencent Games Credit'].map(a=>'<button>'+a+'</button>').join('')));return}
+ if(n=='empty'){p.append(E('div','n','<br><br><div style="text-align:center;font-size:16px;color:var(--tx)">Your blocklist is empty</div>'));return}
+ if(n=='res'){const g=E('div','cards');[['“Prologue IX” New Version Resource Pack','Download the new version resources early so the update finishes faster. Please reserve device space in advance. (187.9M / 1254.0M)','NEW'],['Weapon Skin Pack','Download to view the look and effects of all weapon skins.','✓'],['Standard Mode Map Pack','Download to experience all maps in Standard, Casual, Custom and other modes.','✓']].forEach(c=>g.append(E('div','card','<small>'+c[2]+'</small><br><b>'+c[0]+'</b><br><small>'+c[1]+'</small>')));p.append(g,E('div','n','1. Auto-downloads on Wi-Fi; not on mobile data.<br>2. Downloads happen outside matches only and pause automatically when a match starts.'))}}
+function pvu(){const v=$('pv'),t=S[si].tabs[ti];v.style.display=t.pv?'block':'none';v.className=t.pv=='map'?'map':'';
+ if(t.pv=='map')v.innerHTML='<div style="position:absolute;bottom:4px;width:100%;text-align:center;font-size:11px;color:#fff">Attacker Spawn</div>';
+ if(t.pv=='xh'){const h=S[si].tabs[1].rows,c=h[1][2],col=P9[c],g=h[4][2],th=g[0][2],ln=g[1][2];v.innerHTML='<i style="position:absolute;left:73px;top:73px;width:4px;height:4px;background:'+col+'"></i>'+[[-1,0],[1,0],[0,-1],[0,1]].map(d=>{const w=d[0]?ln*2:th,hh=d[0]?th:ln*2;return '<i style="position:absolute;background:'+col+';width:'+w+'px;height:'+hh+'px;left:'+(75+d[0]*(6+ (d[0]?ln:th))-w/2)+'px;top:'+(75+d[1]*(6+(d[1]?ln:th))-hh/2)+'px"></i>'}).join('')}}
+function rr(){const t=S[si].tabs[ti],R=$('rows');R.innerHTML='';t.rows.forEach(r=>row(r,R,0,rr));pvu()}
+function draw(){const n=$('nav');n.innerHTML='';S.forEach((s,i)=>{const d=E('div',i==si?'on':'',s.n);d.onclick=()=>{si=i;ti=0;draw()};n.append(d)});
+ const T=$('tabs');T.innerHTML='';S[si].tabs.forEach((t,i)=>{const d=E('div',i==ti?'on':'',t.n);d.onclick=()=>{ti=i;draw()};T.append(d)});
+ const nt=S[si].tabs[ti].note;if(nt)T.append(E('span',0,nt));$('bar').style.display=S[si].tabs[ti].bar?'flex':'none';rr()}
+$('rst').onclick=()=>{S=JSON.parse(INIT);Object.keys(open).forEach(k=>delete open[k]);draw()};
+draw();
+</script>
+</body>
+</html>
